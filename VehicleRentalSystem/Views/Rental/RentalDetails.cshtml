@@ -1,0 +1,6 @@
+﻿@model VehicleRentalSystem.Models.Rental
+
+<h1>Rental Details</h1>
+<p>Vehicle: @Model.Vehicle.GetVehicleInfo()</p>
+<p>Rental Period: @Model.StartDate.ToShortDateString() - @Model.EndDate.ToShortDateString()</p>
+<p>Total Rental Fee: @ViewBag.TotalFee:C</p>

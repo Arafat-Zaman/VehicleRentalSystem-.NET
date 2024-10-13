@@ -1,0 +1,19 @@
+﻿@model IEnumerable<VehicleRentalSystem.Models.Vehicle>
+
+<h1>Available Vehicles</h1>
+<ul>
+    @foreach (var vehicle in Model)
+    {
+        <li>
+            @vehicle.GetVehicleInfo()
+            <form method="post" asp-action="RentVehicle">
+                <input type="hidden" name="vehicleId" value="@vehicle.Id" />
+                <label>Start Date:</label>
+                <input type="date" name="startDate" required />
+                <label>End Date:</label>
+                <input type="date" name="endDate" required />
+                <button type="submit">Rent</button>
+            </form>
+        </li>
+    }
+</ul>
